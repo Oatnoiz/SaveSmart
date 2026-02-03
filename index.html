@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="style.css">
+    <title>Save Smart</title>
+
+</head>
+
+<body>
+    <!--Home-->
+    <div class="box">
+        <div class="navbar">
+                <span class="logo" style="color:white;">SaveSmart</span>
+                <div class="menu">
+                    <a href="welcome.html" style="color:white;"><b>Home</b></a>
+                    <a href="index.html" style="color:white;"><b>Calculation Page</b></a>
+                    <a href="Creator.html" style="color:white;"><b>Creator</b></a>
+                </div>
+        </div>
+    </div>
+
+    <div class="form-container" style="text-align:center">
+        <div id="homePage" class="page active">
+            <h2>กรอกข้อมูลของคุณ</h2>
+            <input id="name" placeholder="ชื่อ - นามสกุล" >
+            <input id="income" type="number" placeholder="เงินเดือน (บาท)" >
+            <label>ค่าอาหาร (บาท/เดือน)</label>
+            <input id="foodMin" type="number" placeholder="ขั้นต่ำ" >
+            <input id="foodMax" type="number" placeholder="สูงสุด" >
+            <label>ค่ารถ (บาท/เดือน)</label>
+            <input id="transportMin" type="number" placeholder="ขั้นต่ำ">
+            <input id="transportMax" type="number" placeholder="สูงสุด">
+            <label>ค่าน้ำประปา (บาท/เดือน)</label>
+            <input id="waterMin" type="number" placeholder="ขั้นต่ำ" >
+            <input id="waterMax" type="number" placeholder="สูงสุด" >
+
+            <label>ค่าไฟ (บาท/เดือน)</label>
+            <input id="electricMin" type="number" placeholder="ขั้นต่ำ" >
+            <input id="electricMax" type="number" placeholder="สูงสุด" >
+
+            <label>เบ็ดเตล็ด (บาท/เดือน)</label>
+            <input id="overMin" type="number" placeholder="ขั้นต่ำ" >
+            <input id="overMax" type="number" placeholder="สูงสุด" >
+            <button onclick="goToPage('bankPage')">ถัดไป</button>
+            <button class="reload" title="reload" onclick="location.reload()">⟲</button>
+        </div>
+        <div id="bankPage" class="page">
+            <h2>เลือกธนาคาร</h2>
+            <select name="bank"> 
+                <option value="bbl">ธนาคารกรุงเทพ</option>
+                <option value="kbank">ธนาคารกสิกรไทย</option>
+                <option value="scb">ธนาคารไทยพาณิชย์</option>
+            </select><br><br>
+            <div style="text-align:left;">
+                <table>
+                    <tr>
+                        <th> </th>
+                        <th>ธนาคาร</th>
+                        <th>ดอกเบี้ย</th>
+                    </tr>
+                    <tr>
+                        <td style="margin:40px auto"><img src="img/bang.png"></td>
+                        <td>ธนาคารกรุงเทพ(BBL)</td>
+                        <td>0.5%/ปี</td>
+                    </tr>
+                    <tr>
+                        <td style="margin:40px auto"><img src="img/kbank.png"></td>
+                        <td>ธนาคารกสิกรไทย(KBank)</td>
+                        <td>0.55%/ปี</td>
+                    </tr>
+                    <tr>
+                        <td style="margin:40px auto"><img src="img/scb.png"></td>
+                        <td>ธนาคารไทยพาณิชย์(SCB)</td>
+                        <td>0.5%/ปี</td>
+                    </tr>
+                </table><br>
+            </div>      
+            <button onclick="calculate()"style="width:90px;padding-top:10px">Calculate</button>         
+        </div>
+        <div id="resultPage" class="page wide" style="text-align:center">
+            <h1>ผลการคำนวณ</h1>
+            <div id="output"></div>
+            <div class="chart-container">
+                <div class="chart-box">
+                    <canvas id="polarChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </div>
+        <button onclick="window.location.href = 'welcome.html' ">Restart</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+
+</html>

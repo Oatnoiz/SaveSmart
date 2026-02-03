@@ -1,29 +1,150 @@
+    * {
+    box-sizing: border-box;
+    }
+    @font-face {
+        font-family: "Island";
+        src: url(fonts/Island_Moments/IslandMoments-Regular.ttf);
+    }
+    @font-face {
+        font-family: "Sekuya";
+        src: url(fonts/Sekuya/Sekuya-Regular.ttf);
+    }
+    @font-face {
+        font-family: "jos";
+        src: url(fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+    }
+    @font-face {
+        font-family: "Anuphan";
+        src: url(fonts/Josefin_Sans/Anuphan-VariableFont_wght.ttf);
+    }    
+    h1{
+        padding-left: 20px;
+        font-size: 40px;
+        font-family: "jos";
+    }
+    .box{
+    width: 100%;
+    height: 70px;
+    background-color:#0099cc;
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo{
+        margin:-30px;
+        font-family: "Island";
+        font-size: 45px;
+        color: black;
+    }
+
+    .menu{
+        display: flex;
+        gap: 30px;
+    }
+
+    .menu a{
+        font-size: 16px;
+        color: #1F2937;
+        text-decoration: none;
+    }
+
+    .menu a:hover{
+        text-decoration: underline;
+    }
+
+    span{
+        font-family: "Island";
+        font-size:  50px;
+    }
+    a{
+        text-align: right;
+        font-size:16px;
+        color: #1F2937;
+    }
     body {
         font-family: sans-serif;
-        margin: 0;
+        margin:0;
+        margin-bottom: 40px;
         padding: 0;
-        background: #f0f4f8;
+        
     }
-
+    .app-container {
+        min-height: 100vh;
+        background: #f0f4f8;
+        align-items: flex-start;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+    }
     .page {
         display: none;
-        padding: 20px;
+        padding: 10px;
+    }
+    .form-container {
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .active {
-        display: block;
+    .range-group{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
     }
+    .form-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .chart-box {
+        width: 100%;
+        max-width: 420px;
+        margin: 30px 0;
+    }
+
+    #polarChart {
+        width: 100%;
+        height: 100%;
+    }
+
+    .page.active {
+        display: block;
+        width: 100%;
+        max-width: 1000px;
+    }
+
 
     input {
         display: block;
-        margin: 10px 0;
+        margin: 10px auto;
         padding: 8px;
         width: 100%;
         max-width: 300px;
     }
 
     button {
-        padding: 10px 20px;
+        padding: 6px 6px;
         margin-top: 20px;
         background: #007bff;
         color: white;
@@ -40,4 +161,35 @@
     }
     .reload{
         font-size: 14px;
+    }
+    .chart-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+    table{
+        width:auto;
+        max-width: 100%;
+        margin: 4px auto;
+        border: 0.5px solid black;
+        border-collapse: collapse;
+    }
+
+    th,td{
+        border: 0.5px solid black;
+        border-collapse: collapse;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    } 
+    img{
+        width:100px;
+        height:110px;
+    }
+    select{
+        width:60%;
+        height:40px;
     }
